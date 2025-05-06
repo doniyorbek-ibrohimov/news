@@ -53,6 +53,7 @@ class Article(models.Model):
         super().save(*args, *kwargs)
 
     publisheds=PublishedManager()
+    objects=models.Manager()
 
     def __str__(self):
         return self.title
@@ -108,3 +109,4 @@ class Moment(models.Model):
 
     def __str__(self):
         return self.title
+    publisheds=PublishedManager()
