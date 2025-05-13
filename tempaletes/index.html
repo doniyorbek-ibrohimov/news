@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% block title %}Home Page {% endblock %}
+
 {% block content %}
 
 
@@ -112,7 +114,7 @@
                             </div>
                         </div>
                         <div class="border-bottom py-3">
-                            <a href="#" class="display-4 text-dark mb-0 link-hover">
+                            <a href="/articles/{{ articles.0.slug }}" class="display-4 text-dark mb-0 link-hover">
                                 {{articles.0.title|truncatechars:75}}
                             </a>
                         </div>
@@ -130,7 +132,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="d-flex flex-column">
-                                        <a href="#" class="h3">{{ articles.1.title|truncatechars:80 }}</a>
+                                        <a href="/articles/{{ articles.1.slug }}" class="h3">{{ articles.1.title|truncatechars:80 }}</a>
                                         <p class="mb-0 fs-5"><i class="fa fa-clock"> {{ articles.1.read_time }} to read</i> </p>
                                         <p class="mb-0 fs-5"><i class="fa fa-eye"> {{ articles.1.views }} views</i></p>
                                         <p class="mb-0 fs-5"><i class="fa fa-calendar"> {{ articles.1.created_at|date:"d.m.Y" }} </i></p>
@@ -149,7 +151,7 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="d-flex flex-column">
-                                        <a href="#" class="h4 mb-2">{{ articles.2.title|truncatechars:65}}</a>
+                                        <a href="/articles/{{ articles.2.slug }}" class="h4 mb-2">{{ articles.2.title|truncatechars:65}}</a>
                                         <p class="fs-5 mb-0"><i class="fa fa-clock"> {{articles.2.read_time}} to read</i> </p>
                                         <p class="fs-5 mb-0"><i class="fa fa-eye"> {{articles.2.views}} views</i></p>
                                     </div>
@@ -159,14 +161,14 @@
                                     <div class="row g-4 align-items-center">
                                         <div class="col-5">
                                             <div class="overflow-hidden rounded">
-                                                <img src="{{articles.image.url}}" class="img-zoomin img-fluid rounded w-100" alt="">
+                                                <img src="{{article.image.url}}" class="img-zoomin img-fluid rounded w-100" alt="">
                                             </div>
                                         </div>
                                         <div class="col-7">
                                             <div class="features-content d-flex flex-column">
-                                                <a href="#" class="h6"> {{articles.title|truncatechars:45}}</a>
-                                                <small><i class="fa fa-clock"> {{articles.read_time}} to read</i> </small>
-                                                <small><i class="fa fa-eye"> {{articles.views}} views</i></small>
+                                                <a href="/articles/{{ article.slug }}" class="h6"> {{article.title|truncatechars:45}}</a>
+                                                <small><i class="fa fa-clock"> {{article.read_time}} to read</i> </small>
+                                                <small><i class="fa fa-eye"> {{article.views}} views</i></small>
                                             </div>
                                         </div>
                                     </div>

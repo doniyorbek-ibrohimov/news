@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} {{ article.title }} {% endblock %}
+{%block content %}
+<hr>
+<h1>Articles in {{ category.name }}</h1>
+
+{% for article in articles %}
+    <div>
+        <h2><a href="{% url 'detail_page' slug=article.slug %}">{{ article.title }}</a></h2>
+        <p>{{ article.intro|truncatewords:30 }}</p>
+    </div>
+{% empty %}
+    <p>No articles in this category yet.</p>
+{% endfor %}
+<hr>
+{% endblock %}
